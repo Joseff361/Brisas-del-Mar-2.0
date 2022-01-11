@@ -29,8 +29,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@mdi/font/scss/materialdesignicons.scss"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -122,6 +121,10 @@
               "devServerTarget": "eTable-web:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     },
@@ -242,6 +245,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "eTable-web"
 }
