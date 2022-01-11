@@ -7,10 +7,12 @@ import { SistemaGeneralService } from "src/app/services/administracion/sistema/s
 import { MatDialog } from "@angular/material/dialog";
 import { DialogComponent } from "./dialog/dialog.component";
 import { MainMenuService } from "src/app/services/administracion/sistema/main-menu.service";
+import { Router } from "@angular/router";
 
 // Trick
 var svgImage;
 var trick;
+var fakeRouter;
 
 // List of Cities
 const Ciudades = [
@@ -59,7 +61,8 @@ export class MainComponent implements OnInit {
     private service: UsuarioService,
     private config: SistemaGeneralService,
     private dialog: MatDialog,
-    private mainMenuService: MainMenuService
+    private mainMenuService: MainMenuService,
+    private router: Router
   ) {
     this.user = new User();
     this.configuracion = new Configuracion();
@@ -82,6 +85,7 @@ export class MainComponent implements OnInit {
   ngAfterViewInit() {
     svgImage = this.peruMap.nativeElement;
     trick = this.dialog;
+    fakeRouter = this.router;
 
     if (window.addEventListener) {
       window.addEventListener("storage", this.changeColor, false);
@@ -154,6 +158,10 @@ export class MainComponent implements OnInit {
         top: "200px",
         right: "100px",
       },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) fakeRouter.navigate(["clientes/reservar"]);
     });
   }
 }

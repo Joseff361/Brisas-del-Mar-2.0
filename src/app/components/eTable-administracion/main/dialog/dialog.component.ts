@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { Router } from "@angular/router";
 import { MainMenuService } from "src/app/services/administracion/sistema/main-menu.service";
 
 interface Restaurante {
@@ -35,7 +36,8 @@ export class DialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private mainMenuService: MainMenuService
+    private mainMenuService: MainMenuService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -45,7 +47,9 @@ export class DialogComponent implements OnInit {
     this.ciudadFicticia = localStorage.getItem("Ciudad");
 
     this.ciudadActual = this.ciudades.find(
-      (data) => this.ciudadFicticia.toLocaleLowerCase() == data.titulo.toLocaleLowerCase()
+      (data) =>
+        this.ciudadFicticia.toLocaleLowerCase() ==
+        data.titulo.toLocaleLowerCase()
     );
 
     console.log("ciudadActual", this.ciudadActual);
@@ -58,6 +62,9 @@ export class DialogComponent implements OnInit {
           console.log("restaurantes", this.restaurantes);
         });
     }
+  }
 
+  reservar(): void {
+    this.router.navigate(["clientes/reservar"]);
   }
 }
