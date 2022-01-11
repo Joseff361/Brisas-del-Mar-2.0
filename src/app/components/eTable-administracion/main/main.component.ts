@@ -5,13 +5,43 @@ import { Path } from "src/app/infrastructure/constans/Path";
 import { Configuracion } from "src/app/domain/Configuracion";
 import { SistemaGeneralService } from "src/app/services/administracion/sistema/sistema-general.service";
 
+// Trick
+var svgImage;
+const Ciudades = [
+  "Lambayeque",
+  "Piura",
+  "Tumbes",
+  "Apurímac",
+  "Arequipa",
+  "Cusco",
+  "Madre de Dios",
+  "Puno",
+  "Moquegua",
+  "Tacna",
+  "Ancash",
+  "Cajamarca",
+  "Huánuco",
+  "La Libertad",
+  "Pasco",
+  "San Martín",
+  "Ucayali",
+  "Amazonas",
+  "Loreto",
+  "Ayacucho",
+  "Callao",
+  "Huancavelica",
+  "Ica",
+  "Junín",
+  "Lima",
+];
+
 @Component({
   selector: "app-main",
   templateUrl: "./main.component.html",
   styleUrls: ["./main.component.css"],
 })
 export class MainComponent implements OnInit {
-  @ViewChild('peruMap', {static: true}) peruMap: ElementRef; 
+  @ViewChild("peruMap", { static: true }) peruMap: ElementRef;
 
   public load: boolean;
   public loading: string;
@@ -30,18 +60,19 @@ export class MainComponent implements OnInit {
     this.cliente = true;
   }
 
-  imageSvg: unknown;
+  imageSvg: any;
 
   ngOnInit() {
     const auth = localStorage.getItem("authentication");
     this.getAuth(auth);
+  }
 
-    this.imageSvg = this.peruMap.nativeElement;
-    console.log('imageSvg', this.imageSvg)
-    
+  ngAfterViewInit() {
+    svgImage = this.peruMap.nativeElement;
+
     if (window.addEventListener) {
       window.addEventListener("storage", this.changeColor, false);
-  }
+    }
   }
 
   private getConfiguracion() {
@@ -87,6 +118,19 @@ export class MainComponent implements OnInit {
 
   /* the coolest code */
   changeColor(): void {
-    console.log('click!!')
+    const ciudad = localStorage.getItem("Ciudad");
+
+    for (let cd of Ciudades) {
+      const tag = svgImage.contentDocument.querySelector(`path[name="${cd}"]`);
+
+      if (tag) {
+        tag.style.fill = "#7c7c7c";
+      }
+    }
+
+    const tag = svgImage.contentDocument.querySelector(
+      `path[name="${ciudad}"]`
+    );
+    tag.style.fill = "#821625";
   }
 }
