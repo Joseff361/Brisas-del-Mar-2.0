@@ -4,9 +4,15 @@ import { UsuarioService } from "src/app/services/administracion/administracion-u
 import { Path } from "src/app/infrastructure/constans/Path";
 import { Configuracion } from "src/app/domain/Configuracion";
 import { SistemaGeneralService } from "src/app/services/administracion/sistema/sistema-general.service";
+import { MatDialog } from "@angular/material/dialog";
+import { DialogComponent } from "./dialog/dialog.component";
+import { MainMenuService } from "src/app/services/administracion/sistema/main-menu.service";
 
 // Trick
 var svgImage;
+var trick;
+
+// List of Cities
 const Ciudades = [
   "Lambayeque",
   "Piura",
@@ -51,7 +57,9 @@ export class MainComponent implements OnInit {
   public configuracion: Configuracion;
   constructor(
     private service: UsuarioService,
-    private config: SistemaGeneralService
+    private config: SistemaGeneralService,
+    private dialog: MatDialog,
+    private mainMenuService: MainMenuService
   ) {
     this.user = new User();
     this.configuracion = new Configuracion();
@@ -65,10 +73,15 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     const auth = localStorage.getItem("authentication");
     this.getAuth(auth);
+
+    this.mainMenuService.getListOfCities().subscribe(data => {
+      localStorage.setItem('Ciudades', JSON.stringify(data));
+    })
   }
 
   ngAfterViewInit() {
     svgImage = this.peruMap.nativeElement;
+    trick = this.dialog;
 
     if (window.addEventListener) {
       window.addEventListener("storage", this.changeColor, false);
@@ -132,5 +145,14 @@ export class MainComponent implements OnInit {
       `path[name="${ciudad}"]`
     );
     tag.style.fill = "#821625";
+
+    const dialogRef = trick.open(DialogComponent, {
+      height: "400px",
+      width: "480px",
+      position: {
+        top: "200px",
+        right: "100px",
+      },
+    });
   }
 }
