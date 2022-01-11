@@ -40,6 +40,7 @@ import { CrearClienteComponent } from "./components/eTable-administracion/main/a
 import { EditarClienteComponent } from "./components/eTable-modals/cliente/editar/editar-cliente";
 import { NgxPaginationModule } from "ngx-pagination";
 import { DialogComponent } from "./components/eTable-administracion/main/dialog/dialog.component";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { DialogComponent } from "./components/eTable-administracion/main/dialog/
     MatDialogModule,
     ImageUploadModule.forRoot(),
     NgxPaginationModule,
+    MatIconModule,
   ],
   entryComponents: [
     EliminarClienteComponent,

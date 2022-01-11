@@ -1,0 +1,115 @@
+.o-dialog__preview__header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fuzzy Bubbles", cursive;
+  margin-bottom: 20px;
+}
+
+.o-dialog__preview__img {
+  width: 150px;
+  height: auto;
+}
+
+.o-dialog__preview {
+  display: flex;
+  flex-direction: column;
+}
+
+.o-dialog__preview__content {
+  display: flex;
+}
+
+.o-dialog__preview__right__schedule {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.o-dialog__preview__right__items {
+  width: 100%;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.o-dialog__preview__right__item {
+  border-radius: 8px;
+  /*box-shadow: 2px 2px rgba(0, 0, 0, 0.2);*/
+  background-color: #ffe4e1;
+  border-radius: 15px 0px 15px 0px;
+  margin-bottom: 10px;
+  transition: 0.6s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  font-family: "Fuzzy Bubbles", cursive;
+  font-size: 12px;
+}
+
+.o-dialog__preview__right__item__add {
+  display: flex;
+  flex-direction: column;
+}
+
+.o-dialog__preview__right__item__title {
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.o-dialog__preview__right__item:hover {
+  /*transform: scale(1.05);*/
+  border-radius: 0px 15px 0px 15px;
+}
+
+.o-dialog__preview__right__img {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.o-dialog__empty__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00c9ff;
+}
+
+.o-dialog__empty {
+  padding: 20px;
+  font-family: "Fuzzy Bubbles", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.o-dialog__empty__img {
+  width: 300px;
+}
+
+.o-dialog__preview__footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.o-dialog__preview__footer__button {
+  padding: 5px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  background: #C1FAFF;
+  transition: 0.6s;
+  font-family: "Fuzzy Bubbles", cursive;
+}
+
+
+.o-dialog__preview__footer__button:hover {
+  background: #00C5FF;
+}

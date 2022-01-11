@@ -30,6 +30,7 @@ export class DialogComponent implements OnInit {
   ciudades: Ciudad[] = [];
   ciudadActual: Ciudad;
   restaurantes: Restaurante[];
+  ciudadFicticia: string;
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
@@ -41,10 +42,10 @@ export class DialogComponent implements OnInit {
     this.mainMenuService.getListOfCities;
     this.ciudades = JSON.parse(localStorage.getItem("Ciudades")) as Ciudad[];
 
-    const ciudad = localStorage.getItem("Ciudad");
+    this.ciudadFicticia = localStorage.getItem("Ciudad");
 
     this.ciudadActual = this.ciudades.find(
-      (data) => ciudad.toLocaleLowerCase() == data.titulo.toLocaleLowerCase()
+      (data) => this.ciudadFicticia.toLocaleLowerCase() == data.titulo.toLocaleLowerCase()
     );
 
     console.log("ciudadActual", this.ciudadActual);
@@ -55,7 +56,6 @@ export class DialogComponent implements OnInit {
         .subscribe((data) => {
           this.restaurantes = data;
           console.log("restaurantes", this.restaurantes);
-
         });
     }
 

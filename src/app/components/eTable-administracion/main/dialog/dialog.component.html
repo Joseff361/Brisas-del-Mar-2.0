@@ -1,1 +1,89 @@
-<p>dialog works!</p>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<section class="o-dialog">
+  <div
+    *ngIf="ciudadActual && restaurantes.length > 0"
+    class="o-dialog__preview"
+  >
+    <div class="o-dialog__preview__header">
+      <img
+        class="o-dialog__preview__img"
+        src="assets/cliente/logo.png"
+        alt=""
+      />
+      <b>{{ ciudadActual.titulo }}</b>
+    </div>
+    <div class="o-dialog__preview__right__items">
+      <div class="o-dialog__preview__right__item">
+        <img
+          class="o-dialog__preview__right__img"
+          src="assets/calendar.png"
+          alt=""
+        />
+        <div class="o-dialog__preview__right__item__add">
+          <strong class="o-dialog__preview__right__item__title"
+            >Horario de Atención</strong
+          >
+          <span>{{ restaurantes[0].horario_atencion }}</span>
+        </div>
+      </div>
+      <div class="o-dialog__preview__right__item">
+        <img
+          class="o-dialog__preview__right__img"
+          src="assets/price-tag.png"
+          alt=""
+        />
+        <div class="o-dialog__preview__right__item__add">
+          <strong class="o-dialog__preview__right__item__title"
+            >Rango de Precio</strong
+          >
+          <span>{{ restaurantes[0].rango_precio }}</span>
+        </div>
+      </div>
+      <div class="o-dialog__preview__right__item">
+        <img
+          class="o-dialog__preview__right__img"
+          src="assets/fast-food.png"
+          alt=""
+        />
+        <div class="o-dialog__preview__right__item__add">
+          <strong class="o-dialog__preview__right__item__title"
+            >Platillos</strong
+          >
+          <span>{{ restaurantes[0].platillos }}</span>
+        </div>
+      </div>
+      <div class="o-dialog__preview__right__item">
+        <img
+          class="o-dialog__preview__right__img"
+          src="assets/diet.png"
+          alt=""
+        />
+        <div class="o-dialog__preview__right__item__add">
+          <strong class="o-dialog__preview__right__item__title"
+            >Especialidades</strong
+          >
+          <span>{{ restaurantes[0].especialidad }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="o-dialog__preview__footer">
+      <div class="o-dialog__preview__footer__button">
+        Reservar
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!ciudadActual" class="o-dialog__empty">
+    <b class="o-dialog__empty__title">{{ ciudadFicticia }}</b>
+    <span>No se encontraron resultados para la ciudad seleccionada</span>
+    <img class="o-dialog__empty__img" src="assets/empty.png" alt="" />
+  </div>
+</section>

@@ -14,10 +14,10 @@ var trick;
 
 // List of Cities
 const Ciudades = [
-  "Lambayeque",
+  "Chiclayo",
   "Piura",
   "Tumbes",
-  "Apurímac",
+  "Abancay",
   "Arequipa",
   "Cusco",
   "Madre de Dios",
@@ -27,17 +27,17 @@ const Ciudades = [
   "Ancash",
   "Cajamarca",
   "Huánuco",
-  "La Libertad",
+  "Trujillo",
   "Pasco",
   "San Martín",
-  "Ucayali",
+  "Pucallpa",
   "Amazonas",
-  "Loreto",
+  "Iquitos",
   "Ayacucho",
   "Callao",
   "Huancavelica",
   "Ica",
-  "Junín",
+  "Huancayo",
   "Lima",
 ];
 
@@ -74,9 +74,9 @@ export class MainComponent implements OnInit {
     const auth = localStorage.getItem("authentication");
     this.getAuth(auth);
 
-    this.mainMenuService.getListOfCities().subscribe(data => {
-      localStorage.setItem('Ciudades', JSON.stringify(data));
-    })
+    this.mainMenuService.getListOfCities().subscribe((data) => {
+      localStorage.setItem("Ciudades", JSON.stringify(data));
+    });
   }
 
   ngAfterViewInit() {
@@ -147,8 +147,9 @@ export class MainComponent implements OnInit {
     tag.style.fill = "#821625";
 
     const dialogRef = trick.open(DialogComponent, {
-      height: "400px",
+      height: "auto",
       width: "480px",
+      maxHeight: "550px",
       position: {
         top: "200px",
         right: "100px",
