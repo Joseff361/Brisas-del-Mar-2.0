@@ -1,45 +1,43 @@
-div.masthead {
-    /* text-align: center;
+/* div.masthead {
+   text-align: center;
     color: white;
     background-image: url("../../../../assets/cliente/fondo6.jpg"); 
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
-    height: 94.8vh; */
-  }
+    height: 94.8vh; 
+  }*/
 
-  div.masthead .intro-text {
-    
-    padding: 100px!important;
-    
-  }
-  
-  div.masthead .intro-text .intro-lead-in {
-    font-size: 22px;
-    line-height: 22px;
-    margin-bottom: 25px;
- }
-  
-  div.masthead .intro-text .intro-heading {
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 50px;
-    margin-bottom: 25px;
-  }
+div.masthead .intro-text {
+  padding: 100px !important;
+}
 
-  .img .logo{
-   margin-left: 200px;
-  }
-  
-.clientecontainer{
+div.masthead .intro-text .intro-lead-in {
+  font-size: 22px;
+  line-height: 22px;
+  margin-bottom: 25px;
+}
+
+div.masthead .intro-text .intro-heading {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+
+.img .logo {
+  margin-left: 200px;
+}
+
+.clientecontainer {
   position: relative;
   width: 100%;
   height: 94.8vh;
   overflow: hidden;
 }
 
-.clientecontainer .clienteslider{
+.clientecontainer .clienteslider {
   position: absolute;
   top: 0;
   left: 0;
@@ -48,53 +46,51 @@ div.masthead {
   /* animation: animate 20s linear infinite ; */
 }
 
-.clientecontainer .clienteslider .clienteslide{
+.clientecontainer .clienteslider .clienteslide {
   position: relative;
   width: 20%;
   height: 100%;
   float: left;
-
 }
 
-.clientecontainer .clienteslider .clienteslide .caption{
+.clientecontainer .clienteslider .clienteslide .caption {
   position: absolute;
   bottom: 200px;
   left: 500px;
   right: 500px;
   padding: 30px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
-  transition: 0.5s;  
+  transition: 0.5s;
 }
 
-.clientecontainer .clienteslider .clienteslide .caption p{
+.clientecontainer .clienteslider .clienteslide .caption p {
   margin: 0;
   padding: 0;
   color: #ffffff;
   font-size: 22px;
   transition: 0.5s;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   text-align: center;
 }
 
-
-.clientecontainer .clienteslider .clienteslide.slide1{
+.clientecontainer .clienteslider .clienteslide.slide1 {
   background: url("../../../../assets/cliente/sistema1.jpg");
   background-size: cover;
   background-position: center;
 }
 
-.clientecontainer .clienteslider .clienteslide.slide2{
+.clientecontainer .clienteslider .clienteslide.slide2 {
   background: url("../../../../assets/cliente/fondo7.jpg");
   background-size: cover;
   background-position: center;
 }
-.clientecontainer .clienteslider .clienteslide.slide3{
+.clientecontainer .clienteslider .clienteslide.slide3 {
   background: url("../../../../assets/cliente/fondo4.jpg");
   background-size: cover;
   background-position: center;
 }
-.clientecontainer .clienteslider .clienteslide.slide4{
+.clientecontainer .clienteslider .clienteslide.slide4 {
   background: url("../../../../assets/cliente/fondo3.jpg");
   background-size: cover;
   background-position: center;
@@ -132,24 +128,53 @@ div.masthead {
 
 } */
 
-  .logo{
-    width: 500px;
-  }
+.logo {
+  width: 500px;
+}
 
-  @media (min-width: 768px) {
-    div.masthead .intro-text {
-      padding-top: 300px;
-      padding-bottom: 200px;
-    }
-    div.masthead .intro-text .intro-lead-in {
-      font-size: 40px;
-      line-height: 40px;
-      margin-bottom: 25px;
- }
-    div.masthead .intro-text .intro-heading {
-      font-size: 75px;
-      font-weight: 700;
-      line-height: 75px;
-      margin-bottom: 50px;
+@media (min-width: 768px) {
+  div.masthead .intro-text {
+    padding-top: 300px;
+    padding-bottom: 200px;
   }
+  div.masthead .intro-text .intro-lead-in {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
   }
+  div.masthead .intro-text .intro-heading {
+    font-size: 75px;
+    font-weight: 700;
+    line-height: 75px;
+    margin-bottom: 50px;
+  }
+}
+
+/* The coolest code */
+.t-map {
+  display: flex;
+  padding: 100px 30px 30px 30px;
+  /*
+  background-image: url("/assets/pla.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  */
+}
+
+.t-map__text {
+  font-family: "Fuzzy Bubbles", cursive;
+  text-align: end;
+  margin-top: 200px;
+}
+
+.remarked {
+  color: #821625;
+}
+
+.t-map__img {
+  width: 300px;
+}
+
+h1 {
+  font-size: 5rem;
+}
